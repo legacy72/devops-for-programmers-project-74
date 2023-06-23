@@ -3,3 +3,6 @@ test:
 
 up:
 	docker-compose up -d $(c)
+
+ci:
+	docker-compose run --rm app npm ci
