@@ -6,4 +6,4 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: npm test
-    image: legacy72/devops-for-programmers-project-74
+    image: legacy72/devops-for-programmers-project-74:latest

@@ -31,4 +31,4 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker-compose -f docker-compose.yml push app:latest
+          docker-compose -f docker-compose.yml push app
