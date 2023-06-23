@@ -33,5 +33,9 @@ jobs:
           docker-compose -f docker-compose.yml run app npm ci
 
       - name: Push Docker image to Docker Hub
-        run: |
-          docker-compose -f docker-compose.yml push app:latest
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./docker-compose.yml
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:latest
