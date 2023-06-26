@@ -5,15 +5,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8080
-    command: npm run dev
+    command: npm start
     volumes:
       - ./app:/app
-    environment:
-      - DATABASE_PORT=5432
-      - DATABASE_HOST=db
-      - DATABASE_NAME=hexlet_devops
-      - DATABASE_USERNAME=hexlet_devops
-      - DATABASE_PASSWORD=hexlet_devops
+    env_file:
+      - .env
     depends_on:
       - db
 
