@@ -18,6 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set up environment variables
+        run: |
+          echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env
+          echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
+          echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:
