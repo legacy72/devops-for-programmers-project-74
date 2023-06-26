@@ -20,9 +20,9 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env
-          echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
-          echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+          dotenv -f .env.example echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env
+          dotenv -f .env.example echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
+          dotenv -f .env.example echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
