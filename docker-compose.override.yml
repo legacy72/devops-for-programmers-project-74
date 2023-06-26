@@ -8,8 +8,12 @@ services:
     command: npm run dev
     volumes:
       - ./app:/app
-    env_file:
-      - .env
+    environment:
+      - DATABASE_PORT=5432
+      - DATABASE_HOST=db
+      - DATABASE_NAME=hexlet_devops
+      - DATABASE_USERNAME=hexlet_devops
+      - DATABASE_PASSWORD=hexlet_devops
     depends_on:
       - db
 
