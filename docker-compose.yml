@@ -7,12 +7,8 @@ services:
       dockerfile: Dockerfile.production
     command: npm test
     image: legacy72/devops-for-programmers-project-74:latest
-    environment:
-      DB_HOST: ${{ secrets.DB_HOST }}
-      DB_PORT: ${{ secrets.DB_PORT }}
-      DB_NAME: ${{ secrets.DB_NAME }}
-      DB_USER: ${{ secrets.DB_USER }}
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+    env_file:
+      - .env
     depends_on:
       - db
 
