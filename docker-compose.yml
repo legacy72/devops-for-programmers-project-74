@@ -24,7 +24,7 @@ services:
       DATABASE_NAME: hexlet_devops
       DATABASE_USERNAME: hexlet_devops
       DATABASE_PASSWORD: hexlet_devops
-      POSTGRES_HOST_AUTH_METHOD: trust
+#      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - '5432:5432'
     volumes:
