@@ -8,20 +8,23 @@ services:
     command: npm test
     image: legacy72/devops-for-programmers-project-74:latest
     environment:
-      - DATABASE_PORT=5432
-      - DATABASE_HOST=db
-      - DATABASE_NAME=hexlet_devops
-      - POSTGRES_HOST_AUTH_METHOD=trust
+      DATABASE_PORT: 5432
+      DATABASE_HOST: db
+      DATABASE_NAME: hexlet_devops
+      DATABASE_USERNAME: hexlet_devops
+      DATABASE_PASSWORD: hexlet_devops
     depends_on:
       - db
 
   db:
     image: postgres:latest
     environment:
-      - DATABASE_PORT=5432
-      - DATABASE_HOST=db
-      - DATABASE_NAME=hexlet_devops
-      - POSTGRES_HOST_AUTH_METHOD=trust
+      DATABASE_PORT: 5432
+      DATABASE_HOST: db
+      DATABASE_NAME: hexlet_devops
+      DATABASE_USERNAME: hexlet_devops
+      DATABASE_PASSWORD: hexlet_devops
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - '5432:5432'
     volumes:
